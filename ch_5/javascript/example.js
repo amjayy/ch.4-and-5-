@@ -12,3 +12,18 @@ var newItemFirst = document.createElement('li'); // create element
 var newTextFirst = document.createTextNode('kale'); // create text node
 newItemFirst.appendChild(newTextFirst); // add text node to element
 list.insertBefore(newItemFirst, list.firstChild); // add element to list
+
+var listItems = document.querySelectorAll('li'); //ALL <li> elements 
+
+//ADD A CLASS OF COOL TO ALL LIST ITEMS
+var li; 	//Counter variable
+for (i = 0; i < listItems.length; i++) { //Loop through Elements
+	listItems[i].className = 'cool' ; // change class to cool
+}
+
+// ADD number of items in the list of the heading 
+var heading = document.querySelector('h2'); // h2 element
+var headingText = heading.firstChild.nodeValue; // h2 text
+var totalItems = listItems.length; 				// No. of <li> elements
+var newHeading = headingText + '<span>' + totalItems + '</span>'; // Content
+heading.innerHTML = newHeading;
